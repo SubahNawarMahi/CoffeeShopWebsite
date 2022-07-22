@@ -1,0 +1,95 @@
+/*body {
+    font-family: 'Raleway',sans-serif;
+    font-weight: 400;
+    //color:#ffff;
+    letter-spacing: 1px;
+}*/
+
+.container {
+    background-color: #fafafa;
+    margin: 200px;
+    box-shadow: 10px 15px 20px rgba(0,0,0,.1);
+    display: grid;
+    grid-template-columns: 40% 64%;
+}
+
+.container-time {
+    font-family: 'Raleway',sans-serif;
+    background-color: rgba(0,0,0,.95);
+    padding: 50px;
+    outline: 3px dashed #998100;
+    outline-offset: -30px;
+    text-align: center;
+    color: #fff;
+}
+
+.reservation-heading {
+    font-family: 'Raleway',sans-serif;
+    font-size: 35px;
+    text-transform: uppercase;
+}
+
+.reservation-heading-days {
+    font-family: 'Raleway',sans-serif;
+    color: #998100;
+    font-size: 30px;
+}
+
+.reservation-heading-phone {
+    font-family: 'Raleway',sans-serif;
+    font-size: 20px;
+}
+
+.container-reservation-form {
+    font-family: 'Raleway',sans-serif;
+    padding: 20px 0;
+    margin: 0 auto;
+    color: #000;
+}
+
+form {
+    display: grid;
+    grid-row-gap: 20px;
+}
+
+    form p {
+        font-family: 'Raleway',sans-serif;
+        font-weight: 600;
+    }
+
+.form-field {
+    font-family: 'Raleway',sans-serif;
+    display: flex;
+    justify-content: space-between;
+}
+
+input, select {
+    font-family: 'Raleway',sans-serif;
+    padding: 10px 15px;
+}
+
+.btnSubmit {
+    font-family: 'Raleway',sans-serif;
+    background-color: red;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    font-size: 18px;
+    border-radius: 100px;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    -ms-border-radius: 100px;
+    -o-border-radius: 100px;
+    box-shadow: 7px 10px 12px rgba(0,0,0,-1);
+    cursor: pointer;
+    transition: all .3s;
+}
+
+    .btnSubmit:hover {
+        transform: scale(1.03);
+        -webkit-transform: scale(1.0);
+        -moz-transform: scale(1.0);
+        -ms-transform: scale(1.0);
+        -o-transform: scale(1.0);
+        box-shadow: 10px 12px 15px rgba(0,0,0,-3);
+    }

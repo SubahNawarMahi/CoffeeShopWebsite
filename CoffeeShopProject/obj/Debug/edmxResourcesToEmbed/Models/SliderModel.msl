@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SliderDBModelStoreContainer" CdmEntityContainer="SliderDBEntities1">
+    <EntitySetMapping Name="TblSliders">
+      <EntityTypeMapping TypeName="SliderDBModel.TblSlider">
+        <MappingFragment StoreEntitySet="TblSlider">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Path" ColumnName="Path" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

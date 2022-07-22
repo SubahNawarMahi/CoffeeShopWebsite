@@ -1,0 +1,781 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{79DA0B92-0BC6-454D-BA2A-1A24FB9E164E}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CoffeeShopProject</RootNamespace>
+    <AssemblyName>CoffeeShopProject</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44301</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.3\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.3\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.3\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.4.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.4.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.4.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.4.0.1\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.4.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.4.0.1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.4.0.1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.4.0.1\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.4.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\SliderController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\AdminBookTable.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdminBookTable.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AdminBookTable.cs">
+      <DependentUpon>AdminBookTable.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AdminBookTable.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdminBookTable.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AdminBookTable1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdminBookTable.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AdminCartModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdminCartModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AdminCartModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdminCartModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AdminCartModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AdminCartModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AdminCartTbl.cs">
+      <DependentUpon>AdminCartModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BookTableModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BookTableModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BookTableModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BookTableModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BookTableModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BookTableModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BookTableTbl.cs">
+      <DependentUpon>BookTableModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CartModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CartModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CartModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CartModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CartModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CartModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CartTable.cs">
+      <DependentUpon>CartModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Feedback2.cs" />
+    <Compile Include="Models\FeedbackModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FeedbackModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FeedbackModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FeedbackModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FeedbackModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FeedbackModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FeedbackTable.cs">
+      <DependentUpon>FeedbackModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GalleryModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GalleryModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GalleryModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GalleryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GalleryModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GalleryModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GalleryTable.cs">
+      <DependentUpon>GalleryModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\MenuDB.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MenuDB.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MenuDB.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MenuDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MenuDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MenuDB.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MenuTable.cs">
+      <DependentUpon>MenuDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SliderModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SliderModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SliderModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SliderModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SliderModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SliderModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TblSlider.cs">
+      <DependentUpon>SliderModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\coffee.css" />
+    <Content Include="Content\coffee.gif" />
+    <Content Include="Content\coffee.png" />
+    <Content Include="Content\favicon.ico" />
+    <Content Include="Content\project_images\about.jpg" />
+    <Content Include="Content\project_images\js\main.js" />
+    <Content Include="Content\project_images\main.css" />
+    <Content Include="Content\project_images\vendor\aos\aos.css" />
+    <Content Include="Content\project_images\vendor\aos\aos.js" />
+    <Content Include="Content\project_images\vendor\bootstrap-icons\bootstrap-icons.css" />
+    <Content Include="Content\project_images\vendor\bootstrap-icons\index.html" />
+    <Content Include="Content\project_images\vendor\bootstrap\css\bootstrap-grid.css" />
+    <Content Include="Content\project_images\vendor\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="Content\project_images\vendor\bootstrap\css\bootstrap-grid.rtl.css" />
+    <Content Include="Content\project_images\vendor\bootstrap\css\bootstrap-grid.rtl.min.css" />
+    <Content Include="Content\project_images\vendor\bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="Content\project_images\vendor\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="Content\project_images\vendor\bootstrap\css\bootstrap-reboot.rtl.css" />
+    <Content Include="Content\project_images\vendor\bootstrap\css\bootstrap-reboot.rtl.min.css" />
+    <Content Include="Content\project_images\vendor\bootstrap\css\bootstrap-utilities.css" />
+    <Content Include="Content\project_images\vendor\bootstrap\css\bootstrap-utilities.min.css" />
+    <Content Include="Content\project_images\vendor\bootstrap\css\bootstrap-utilities.rtl.css" />
+    <Content Include="Content\project_images\vendor\bootstrap\css\bootstrap-utilities.rtl.min.css" />
+    <Content Include="Content\project_images\vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="Content\project_images\vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Content\project_images\vendor\bootstrap\css\bootstrap.rtl.css" />
+    <Content Include="Content\project_images\vendor\bootstrap\css\bootstrap.rtl.min.css" />
+    <Content Include="Content\project_images\vendor\bootstrap\js\bootstrap.bundle.js" />
+    <Content Include="Content\project_images\vendor\bootstrap\js\bootstrap.bundle.min.js" />
+    <Content Include="Content\project_images\vendor\bootstrap\js\bootstrap.esm.js" />
+    <Content Include="Content\project_images\vendor\bootstrap\js\bootstrap.esm.min.js" />
+    <Content Include="Content\project_images\vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="Content\project_images\vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Content\project_images\vendor\glightbox\css\glightbox.css" />
+    <Content Include="Content\project_images\vendor\glightbox\css\glightbox.min.css" />
+    <Content Include="Content\project_images\vendor\glightbox\css\plyr.css" />
+    <Content Include="Content\project_images\vendor\glightbox\css\plyr.min.css" />
+    <Content Include="Content\project_images\vendor\glightbox\js\glightbox.js" />
+    <Content Include="Content\project_images\vendor\glightbox\js\glightbox.min.js" />
+    <Content Include="Content\project_images\vendor\php-email-form\validate.js" />
+    <Content Include="Content\project_images\vendor\purecounter\purecounter_vanilla.js" />
+    <Content Include="Content\project_images\vendor\swiper\swiper-bundle.min.css" />
+    <Content Include="Content\project_images\vendor\swiper\swiper-bundle.min.js" />
+    <Content Include="Content\style1.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="gallery-coffee-shop\gallery-1.jpg" />
+    <Content Include="gallery-coffee-shop\gallery-10.jpg" />
+    <Content Include="gallery-coffee-shop\gallery-11.jpg" />
+    <Content Include="gallery-coffee-shop\gallery-12.jpg" />
+    <Content Include="gallery-coffee-shop\gallery-13.jpg" />
+    <Content Include="gallery-coffee-shop\gallery-14.jpeg" />
+    <Content Include="gallery-coffee-shop\gallery-15.jpg" />
+    <Content Include="gallery-coffee-shop\gallery-2.jpg" />
+    <Content Include="gallery-coffee-shop\gallery-3.jpg" />
+    <Content Include="gallery-coffee-shop\gallery-4.jpg" />
+    <Content Include="gallery-coffee-shop\gallery-5.jpg" />
+    <Content Include="gallery-coffee-shop\gallery-6.jpg" />
+    <Content Include="gallery-coffee-shop\gallery-7.jpg" />
+    <Content Include="gallery-coffee-shop\gallery-8.jpg" />
+    <Content Include="gallery-coffee-shop\gallery-9.jpg" />
+    <Content Include="gallery-coffee-shop\hero-img2.jpg" />
+    <Content Include="gallery-coffee-shop\hero-img4.jpg" />
+    <Content Include="gallery-coffee-shop\hero-img50.jpg" />
+    <Content Include="gallery-coffee-shop\hero-imgg.jpg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="lib\font-awesome\css\all.css" />
+    <Content Include="lib\font-awesome\css\all.min.css" />
+    <Content Include="lib\font-awesome\css\brands.css" />
+    <Content Include="lib\font-awesome\css\brands.min.css" />
+    <Content Include="lib\font-awesome\css\fontawesome.css" />
+    <Content Include="lib\font-awesome\css\fontawesome.min.css" />
+    <Content Include="lib\font-awesome\css\regular.css" />
+    <Content Include="lib\font-awesome\css\regular.min.css" />
+    <Content Include="lib\font-awesome\css\solid.css" />
+    <Content Include="lib\font-awesome\css\solid.min.css" />
+    <Content Include="lib\font-awesome\css\svg-with-js.css" />
+    <Content Include="lib\font-awesome\css\svg-with-js.min.css" />
+    <Content Include="lib\font-awesome\css\v4-font-face.css" />
+    <Content Include="lib\font-awesome\css\v4-font-face.min.css" />
+    <Content Include="lib\font-awesome\css\v4-shims.css" />
+    <Content Include="lib\font-awesome\css\v4-shims.min.css" />
+    <Content Include="lib\font-awesome\css\v5-font-face.css" />
+    <Content Include="lib\font-awesome\css\v5-font-face.min.css" />
+    <Content Include="lib\font-awesome\js\all.js" />
+    <Content Include="lib\font-awesome\js\all.min.js" />
+    <Content Include="lib\font-awesome\js\brands.js" />
+    <Content Include="lib\font-awesome\js\brands.min.js" />
+    <Content Include="lib\font-awesome\js\conflict-detection.js" />
+    <Content Include="lib\font-awesome\js\conflict-detection.min.js" />
+    <Content Include="lib\font-awesome\js\fontawesome.js" />
+    <Content Include="lib\font-awesome\js\fontawesome.min.js" />
+    <Content Include="lib\font-awesome\js\regular.js" />
+    <Content Include="lib\font-awesome\js\regular.min.js" />
+    <Content Include="lib\font-awesome\js\solid.js" />
+    <Content Include="lib\font-awesome\js\solid.min.js" />
+    <Content Include="lib\font-awesome\js\v4-shims.js" />
+    <Content Include="lib\font-awesome\js\v4-shims.min.js" />
+    <Content Include="lib\font-awesome\sprites\brands.svg" />
+    <Content Include="lib\font-awesome\sprites\regular.svg" />
+    <Content Include="lib\font-awesome\sprites\solid.svg" />
+    <Content Include="menu\css\all.min.css" />
+    <Content Include="menu\css\StyleSheet1.css" />
+    <Content Include="menu\img\about-01.jpg" />
+    <Content Include="menu\img\about-02.jpg" />
+    <Content Include="menu\img\about-03.jpg" />
+    <Content Include="menu\img\about-04.jpg" />
+    <Content Include="menu\img\about-05.jpg" />
+    <Content Include="menu\img\about-06.jpg" />
+    <Content Include="menu\img\dummy-img.png" />
+    <Content Include="menu\img\img-01.jpg" />
+    <Content Include="menu\img\simple-house-01.jpg" />
+    <Content Include="menu\img\simple-house-logo.png" />
+    <Content Include="menu\js\jquery.min.js" />
+    <Content Include="menu\js\parallax.min.js" />
+    <Content Include="menu\webfonts\fa-brands-400.svg" />
+    <Content Include="menu\webfonts\fa-regular-400.svg" />
+    <Content Include="menu\webfonts\fa-solid-900.svg" />
+    <Content Include="Models\AdminBookTable.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AdminBookTable.edmx</DependentUpon>
+      <LastGenOutput>AdminBookTable.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\AdminBookTable.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AdminBookTable.edmx</DependentUpon>
+      <LastGenOutput>AdminBookTable1.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\AdminCartModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AdminCartModel.edmx</DependentUpon>
+      <LastGenOutput>AdminCartModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\AdminCartModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AdminCartModel.edmx</DependentUpon>
+      <LastGenOutput>AdminCartModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\BookTableModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BookTableModel.edmx</DependentUpon>
+      <LastGenOutput>BookTableModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\BookTableModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BookTableModel.edmx</DependentUpon>
+      <LastGenOutput>BookTableModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\CartModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CartModel.edmx</DependentUpon>
+      <LastGenOutput>CartModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\CartModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CartModel.edmx</DependentUpon>
+      <LastGenOutput>CartModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\FeedbackModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>FeedbackModel.edmx</DependentUpon>
+      <LastGenOutput>FeedbackModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\FeedbackModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>FeedbackModel.edmx</DependentUpon>
+      <LastGenOutput>FeedbackModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\GalleryModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>GalleryModel.edmx</DependentUpon>
+      <LastGenOutput>GalleryModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\GalleryModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>GalleryModel.edmx</DependentUpon>
+      <LastGenOutput>GalleryModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\MenuDB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MenuDB.edmx</DependentUpon>
+      <LastGenOutput>MenuDB.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\MenuDB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MenuDB.edmx</DependentUpon>
+      <LastGenOutput>MenuDB.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\SliderModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SliderModel.edmx</DependentUpon>
+      <LastGenOutput>SliderModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\SliderModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SliderModel.edmx</DependentUpon>
+      <LastGenOutput>SliderModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="projectImages\about.jpg" />
+    <Content Include="projectImages\coffo3.png" />
+    <Content Include="projectImages\coffo4.png" />
+    <Content Include="projectImages\hero-imgg.jpg" />
+    <Content Include="projectImages\reservation.jpg" />
+    <Content Include="projectImages\shop2.jpeg" />
+    <Content Include="projectImages\Welcome %281%29.png" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <EntityDeploy Include="Models\SliderModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SliderModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\SliderModel.edmx.diagram">
+      <DependentUpon>SliderModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="libman.json" />
+    <Content Include="lib\font-awesome\webfonts\fa-brands-400.ttf" />
+    <Content Include="lib\font-awesome\webfonts\fa-brands-400.woff2" />
+    <Content Include="lib\font-awesome\webfonts\fa-regular-400.ttf" />
+    <Content Include="lib\font-awesome\webfonts\fa-regular-400.woff2" />
+    <Content Include="lib\font-awesome\webfonts\fa-solid-900.ttf" />
+    <Content Include="lib\font-awesome\webfonts\fa-solid-900.woff2" />
+    <Content Include="lib\font-awesome\webfonts\fa-v4compatibility.ttf" />
+    <Content Include="lib\font-awesome\webfonts\fa-v4compatibility.woff2" />
+    <Content Include="Content\project_images\vendor\bootstrap-icons\bootstrap-icons.json" />
+    <Content Include="Content\project_images\vendor\bootstrap-icons\fonts\bootstrap-icons.woff" />
+    <Content Include="Content\project_images\vendor\bootstrap-icons\fonts\bootstrap-icons.woff2" />
+    <Content Include="Content\project_images\vendor\bootstrap\css\bootstrap-grid.css.map" />
+    <Content Include="Content\project_images\vendor\bootstrap\css\bootstrap-grid.min.css.map" />
+    <Content Include="Content\project_images\vendor\bootstrap\css\bootstrap-grid.rtl.css.map" />
+    <Content Include="Content\project_images\vendor\bootstrap\css\bootstrap-grid.rtl.min.css.map" />
+    <Content Include="Content\project_images\vendor\bootstrap\css\bootstrap-reboot.css.map" />
+    <Content Include="Content\project_images\vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\project_images\vendor\bootstrap\css\bootstrap-reboot.rtl.css.map" />
+    <Content Include="Content\project_images\vendor\bootstrap\css\bootstrap-reboot.rtl.min.css.map" />
+    <Content Include="Content\project_images\vendor\bootstrap\css\bootstrap-utilities.css.map" />
+    <Content Include="Content\project_images\vendor\bootstrap\css\bootstrap-utilities.min.css.map" />
+    <Content Include="Content\project_images\vendor\bootstrap\css\bootstrap-utilities.rtl.css.map" />
+    <Content Include="Content\project_images\vendor\bootstrap\css\bootstrap-utilities.rtl.min.css.map" />
+    <Content Include="Content\project_images\vendor\bootstrap\css\bootstrap.css.map" />
+    <Content Include="Content\project_images\vendor\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="Content\project_images\vendor\bootstrap\css\bootstrap.rtl.css.map" />
+    <Content Include="Content\project_images\vendor\bootstrap\css\bootstrap.rtl.min.css.map" />
+    <Content Include="Content\project_images\vendor\bootstrap\js\bootstrap.bundle.js.map" />
+    <Content Include="Content\project_images\vendor\bootstrap\js\bootstrap.bundle.min.js.map" />
+    <Content Include="Content\project_images\vendor\bootstrap\js\bootstrap.esm.js.map" />
+    <Content Include="Content\project_images\vendor\bootstrap\js\bootstrap.esm.min.js.map" />
+    <Content Include="Content\project_images\vendor\bootstrap\js\bootstrap.js.map" />
+    <Content Include="Content\project_images\vendor\bootstrap\js\bootstrap.min.js.map" />
+    <EntityDeploy Include="Models\MenuDB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>MenuDB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\MenuDB.edmx.diagram">
+      <DependentUpon>MenuDB.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\GalleryModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>GalleryModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\GalleryModel.edmx.diagram">
+      <DependentUpon>GalleryModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="menu\webfonts\fa-brands-400.eot" />
+    <Content Include="menu\webfonts\fa-brands-400.ttf" />
+    <Content Include="menu\webfonts\fa-brands-400.woff" />
+    <Content Include="menu\webfonts\fa-brands-400.woff2" />
+    <Content Include="menu\webfonts\fa-regular-400.eot" />
+    <Content Include="menu\webfonts\fa-regular-400.ttf" />
+    <Content Include="menu\webfonts\fa-regular-400.woff" />
+    <Content Include="menu\webfonts\fa-regular-400.woff2" />
+    <Content Include="menu\webfonts\fa-solid-900.eot" />
+    <Content Include="menu\webfonts\fa-solid-900.ttf" />
+    <Content Include="menu\webfonts\fa-solid-900.woff" />
+    <Content Include="menu\webfonts\fa-solid-900.woff2" />
+    <EntityDeploy Include="Models\CartModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>CartModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\CartModel.edmx.diagram">
+      <DependentUpon>CartModel.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\AdminCartModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>AdminCartModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\AdminCartModel.edmx.diagram">
+      <DependentUpon>AdminCartModel.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\BookTableModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>BookTableModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\BookTableModel.edmx.diagram">
+      <DependentUpon>BookTableModel.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\AdminBookTable.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>AdminBookTable.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\AdminBookTable.edmx.diagram">
+      <DependentUpon>AdminBookTable.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\FeedbackModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>FeedbackModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\FeedbackModel.edmx.diagram">
+      <DependentUpon>FeedbackModel.edmx</DependentUpon>
+    </Content>
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\ConfirmEmail.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ResetPassword.cshtml" />
+    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\SendCode.cshtml" />
+    <Content Include="Views\Account\VerifyCode.cshtml" />
+    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
+    <Content Include="Views\Manage\ChangePassword.cshtml" />
+    <Content Include="Views\Manage\Index.cshtml" />
+    <Content Include="Views\Manage\ManageLogins.cshtml" />
+    <Content Include="Views\Manage\SetPassword.cshtml" />
+    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
+    <Content Include="Views\Shared\Lockout.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Slider\Add.cshtml" />
+    <Content Include="Views\Home\Menu.cshtml" />
+    <Content Include="Views\Home\Event.cshtml" />
+    <Content Include="Views\Home\Gallery.cshtml" />
+    <Content Include="Views\Home\Review.cshtml" />
+    <Content Include="Views\Home\Book.cshtml" />
+    <Content Include="Views\Shared\_AdminLayout.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Slider\EditSlider.cshtml" />
+    <Content Include="Views\Slider\GetASlider.cshtml" />
+    <Content Include="Views\Slider\GetSliderList.cshtml" />
+    <Content Include="Views\Admin\AddMenuItem.cshtml" />
+    <Content Include="Views\Admin\AddGalleryImage.cshtml" />
+    <Content Include="Views\Admin\GetGalleryList.cshtml" />
+    <Content Include="Views\Admin\GetGalleryImage.cshtml" />
+    <Content Include="Views\Admin\EditGalleryImage.cshtml" />
+    <Content Include="Views\Admin\GetMenuList.cshtml" />
+    <Content Include="Views\Admin\GetMenuItem.cshtml" />
+    <Content Include="Views\Admin\EditMenuItem.cshtml" />
+    <Content Include="Views\Home\ShowCart.cshtml" />
+    <Content Include="Views\Admin\ShowOrderList.cshtml" />
+    <Content Include="Views\Home\ShowBookTable.cshtml" />
+    <Content Include="Views\Admin\BookTableList.cshtml" />
+    <Content Include="Views\Admin\GetAllUserCartItem.cshtml" />
+    <Content Include="Views\Admin\GetAllUserTableList.cshtml" />
+    <Content Include="Views\Admin\GetFeedBackList.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="gallery_images\" />
+    <Folder Include="images\" />
+    <Folder Include="menu images\" />
+    <Folder Include="menu\img\gallery\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>58678</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44301/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

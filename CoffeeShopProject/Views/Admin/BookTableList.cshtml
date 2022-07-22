@@ -1,0 +1,33 @@
+﻿@model List<CoffeeShopProject.Models.BookTableTbl>
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+<div class="container" style="margin-top:100px">
+    <h2>BookTableList</h2>
+    <table class="table">
+        <tr>
+            <th>FullName</th>
+            <th>Phone Number</th>
+            <th>Email</th>
+            <th>Day</th>
+            <th>Time</th>
+            <th>Person NO</th>
+            <th>Status</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.FullName</td>
+                <td>@item.PhoneNo</td>
+                <td>@item.Email</td>
+                <td>@item.Day</td>
+                <td>@item.Hours</td>
+                <td>@item.PersonNo</td>
+                <td>@item.Status</td>
+            </tr>
+        }
+    </table>
+</div>

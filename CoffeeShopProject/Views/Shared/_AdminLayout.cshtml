@@ -1,0 +1,95 @@
+﻿@{ Layout = null; }
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>_AdminLayout</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @*<link href="~/Content/Site.css" rel="stylesheet" />
+        <link href="~/Content/bootstrap.css" rel="stylesheet" />
+        <link href="~/Content/bootstrap.min.css" rel="stylesheet" />*@
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/lib/font-awesome/css/all.css" rel="stylesheet" />
+
+    <style>
+        .navbar-inverse .navbar-nav > li > a {
+            font-size: 16px;
+            color: white;
+            font-family: 'Poppins',sans-serif;
+        }
+
+        .navbar-inverse .navbar-brand {
+            font-size: 30px;
+            color: white;
+            font-family: 'Poppins',sans-serif;
+            font-weight: bold;
+            text-shadow: 3px 3px 3px #ababab;
+        }
+        .navbar-inverse .navbar-nav > li > a:hover {
+            color: #ababab;
+        }
+        .navbar-inverse .navbar-brand:hover {
+            color: #ababab;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top" style="background-color: #CE1212; border-color: white; color: black; padding-top: 20px; padding-bottom: 10px">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Coffeeta", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Admin")</li>
+                    <li>@Html.ActionLink("AddSlider", "Add", "Slider")</li>
+                    <li>@Html.ActionLink("Update Menu", "AddMenuItem", "Admin")</li>
+                    <li>@Html.ActionLink("Update Gallery", "AddGalleryImage", "Admin")</li>
+                    <li>@Html.ActionLink("OrderList", "GetAllUserCartItem", "Admin")</li>
+                    <li>@Html.ActionLink("BookTableList", "GetAllUserTableList", "Admin")</li>
+                    <li>@Html.ActionLink("Feedback", "GetFeedBackList", "Admin")</li>
+                    
+
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+    </div>
+    <hr />
+    <div class="footer">
+        <div class="social_media container-fluid">
+            <a class="fb-ic" href="https://www.facebook.com/coffeetaaa">
+                <i class="fab fa-facebook fa-lg"></i>
+
+            </a>
+            <a class="tw-ic" href="https://twitter.com/">
+                <i class="fab fa-twitter fa-lg "></i>
+            </a>
+            <a class="gplus-ic" href="https://www.coffeetaaa.com/">
+                <i class="fab fa-google-plus fa-lg"></i>
+            </a>
+            <a class="ins-ic" href="https://www.instagram.com/coffeetaaa/?hl=en">
+                <i class="fab fa-instagram fa-lg"></i>
+            </a>
+            @*<a class="ins-ic">
+                <i class="fab fa-linkedin fa-lg"></i>
+            </a>*@
+        </div>
+        <p style="text-align:center">&copy; @DateTime.Now.Year - Coffeeta- All rights reserved </p>
+    </div>
+</body>
+</html>

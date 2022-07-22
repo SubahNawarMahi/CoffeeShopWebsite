@@ -1,0 +1,60 @@
+﻿@model CoffeeShopProject.Models.MenuTable
+
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container" style="margin-top:50px">
+    <h2>GetMenuItem</h2>
+
+    <div>
+        <h4>MenuTable</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Title)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Title)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Category)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Category)
+            </dd>
+            
+                <img style="padding:20px" src="@Url.Content(Model.Path)" />
+       
+
+            <dd>
+                @Html.DisplayFor(model => model.Path)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Des)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Des)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Price)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Price)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+
+        @Html.ActionLink("Back to List", "GetMenuList")
+    </p>
+
+</div>

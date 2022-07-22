@@ -1,0 +1,29 @@
+﻿@model CoffeeShopProject.Models.GalleryTable
+
+@{
+    ViewBag.Title = "GetGalleryImage";
+}
+
+<div class="container" style="margin-top:50px">
+    <h2>GetGalleryImage</h2>
+
+    <div>
+        <h4>GalleryTable</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Path)
+            </dt>
+
+            <dd>
+                <img src="@Url.Content(Model.Path)" />
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+
+        @Html.ActionLink("Back to List", "GetGalleryList")
+    </p>
+
+</div>

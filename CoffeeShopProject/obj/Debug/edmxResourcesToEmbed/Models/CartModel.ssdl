@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="UserCartDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="CartTable">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="varchar(max)" />
+    <Property Name="Path" Type="varchar(max)" />
+    <Property Name="Category" Type="varchar(max)" />
+    <Property Name="Quantity" Type="varchar(max)" />
+    <Property Name="Price" Type="varchar(max)" />
+    <Property Name="UserId" Type="varchar(max)" />
+    <Property Name="MenuId" Type="varchar(max)" />
+    <Property Name="Status" Type="varchar(max)" />
+  </EntityType>
+  <EntityContainer Name="UserCartDBModelStoreContainer">
+    <EntitySet Name="CartTable" EntityType="Self.CartTable" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
