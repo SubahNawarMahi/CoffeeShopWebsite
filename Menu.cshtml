@@ -1,0 +1,265 @@
+﻿@model IEnumerable<CoffeeShopProject.Models.MenuTable>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+
+<head>
+
+    <link href="~/menu/css/StyleSheet1.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400" rel="stylesheet" />
+    <link href="~/menu/css/all.min.css" rel="stylesheet" />
+
+    <style>
+
+
+
+
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            max-width: 300px;
+            margin: auto;
+            text-align: center;
+            font-family: arial;
+            border: none;
+        }
+
+            .card button {
+                border: none;
+                outline: 0;
+                padding: 12px;
+                color: white;
+                background-color: #fff;
+                text-align: center;
+                cursor: pointer;
+                width: 100%;
+                font-size: 18px;
+            }
+
+                .card button:hover {
+                    opacity: 0.7;
+                }
+
+
+        .navbar-inverse .navbar-nav > li > a {
+            font-size: 20px;
+            color: white;
+            font-family: 'Poppins',sans-serif;
+        }
+
+        .navbar-inverse .navbar-brand {
+            font-size: 30px;
+            color: white;
+            font-family: 'Poppins',sans-serif;
+            font-weight: bold;
+            text-shadow: 3px 3px 3px #ababab;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container" style="margin-top:80px">
+        <!-- Top box -->
+        <!-- Logo & Site Name -->
+        <h2 style="text-align:center;margin-bottom:20px">Our Menu</h2>
+        <main>
+            <div class="tm-paging-links">
+                <nav>
+                    <ul>
+                        <li class="tm-paging-item"><a href="#" class="tm-paging-link">HOT</a></li>
+                        <li class="tm-paging-item"><a href="#" class="tm-paging-link">COLD</a></li>
+                        <li class="tm-paging-item"><a href="#" class="tm-paging-link">TEA</a></li>
+                        <li class="tm-paging-item"><a href="#" class="tm-paging-link">DESSERT</a></li>
+
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- Gallery -->
+            <div class="row tm-gallery">
+
+                @{
+                    var hot_coffee = new List<CoffeeShopProject.Models.MenuTable>();
+                    var cold_coffee = new List<CoffeeShopProject.Models.MenuTable>();
+                    var tea = new List<CoffeeShopProject.Models.MenuTable>();
+                    var dessert = new List<CoffeeShopProject.Models.MenuTable>();
+
+                    foreach (var item in Model)
+                    {
+                        if (item.Category.Equals("hot"))
+                        {
+                            hot_coffee.Add(item);
+                        }
+                        else if (item.Category.Equals("cold"))
+                        {
+                            cold_coffee.Add(item);
+                        }
+                        else if (item.Category.Equals("tea"))
+                        {
+                            tea.Add(item);
+                        }
+                        else if (item.Category.Equals("dessert"))
+                        {
+                            dessert.Add(item);
+                        }
+
+                    }
+                }
+
+                <div id="tm-gallery-page-hot" class="tm-gallery-page" >
+                    @foreach (var item in hot_coffee)
+                    {
+                        <!-- gallery hot coffee -->
+
+                        <article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item" style="margin-bottom:20px">
+                            <figure>
+
+                                <img src="@Url.Content(item.Path)" alt="Image" class="img-fluid tm-gallery-img" />
+                                <figcaption>
+                                    <h4 class="tm-gallery-title">@item.Title</h4>
+
+                                    <p class="tm-gallery-description">@item.Des<span style="visibility:hidden"> dgjdgjdgsdjfdddddddddddddddddddddddddddddddddddgjdsgjgdkjkljgjklfhdfgsssdfg</span></p>
+                                    <p class="tm-gallery-price">@item.Price</p>
+                                    @*<p style="display:inline-block ;font-size:12px">*@
+
+
+                                       
+                                        <form action="/Home/AddToCart" method="Post">
+                                            <input type="hidden" name="Id" id="Id" value="@item.Id" />
+                                            <label for="OrderNo">Quantity</label>
+                                            <input type="number" name="OrderNo" id="OrderNo" min="0" max="20" style="width:40px;height:20px" />
+                                            <div class="card">
+                                                <input type="submit" value="Add To Cart" style="border-color:white;width:100%;padding:5px" />
+                                            </div>
+                                        </form>
+                                           
+
+                                        @*<p><button type="submit">Add to Cart</button></p>*@
+
+
+
+                                  </figcaption>
+                            </figure>
+                        </article>
+
+
+                    }
+                </div>
+
+                <div id="tm-gallery-page-cold" class="tm-gallery-page">
+                    @foreach (var item in cold_coffee)
+                    {
+                        <!-- gallery hot coffee -->
+
+                        <article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item" style="margin-bottom:20px">
+                            <figure>
+
+                                <img src="@Url.Content(item.Path)" alt="Image" class="img-fluid tm-gallery-img" />
+                                <figcaption>
+                                    <h4 class="tm-gallery-title">@item.Title</h4>
+                                    <p style="font-size:10px;">Menu Id-@item.Id</p>
+                                    <p class="tm-gallery-description">@item.Des <span style="visibility:hidden"> dgjdgjdgsdjfdddddddddddddddddddddddddddddddddddgjdsgjgdkjkljgjklfhdfgsssdfg</span></p>
+                                    <p class="tm-gallery-price">@item.Price</p>
+                                    <form action="/Home/AddToCart" method="Post">
+                                        <input type="hidden" name="Id" id="Id" value="@item.Id" />
+                                        <label for="OrderNo">Quantity</label>
+                                        <input type="number" name="OrderNo" id="OrderNo" min="0" max="20" style="width:40px;height:20px" />
+                                        <div class="card">
+                                            <input type="submit" value="Add To Cart" style="border-color:white;width:100%;padding:5px" />
+                                        </div>
+                                    </form>
+                                </figcaption>
+                            </figure>
+                        </article>
+
+
+                    }
+                </div>
+
+                <div id="tm-gallery-page-tea" class="tm-gallery-page">
+                    @foreach (var item in tea)
+                    {
+                        <!-- gallery hot coffee -->
+
+                        <article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item" style="margin-bottom:20px">
+                            <figure>
+
+                                <img src="@Url.Content(item.Path)" alt="Image" class="img-fluid tm-gallery-img" />
+                                <figcaption>
+                                    <h4 class="tm-gallery-title">@item.Title</h4>
+                                    <p style="font-size:10px;">Menu Id-@item.Id</p>
+                                    <p class="tm-gallery-description">@item.Des<span style="visibility:hidden"> dgjdgjdgsdjfdddddddddddddddddddddddddddddddddddgjdsgjgdkjkljgjklfhdfgsssdfg</span></p>
+                                    <p class="tm-gallery-price">@item.Price</p>
+                                    <form action="/Home/AddToCart" method="Post">
+                                        <input type="hidden" name="Id" id="Id" value="@item.Id" />
+                                        <label for="OrderNo">Quantity</label>
+                                        <input type="number" name="OrderNo" id="OrderNo" min="0" max="20" style="width:40px;height:20px" />
+                                        <div class="card">
+                                            <input type="submit" value="Add To Cart" style="border-color:white;width:100%;padding:5px" />
+                                        </div>
+                                    </form>
+                                </figcaption>
+                            </figure>
+                        </article>
+
+
+                    }
+                </div>
+                <div id="tm-gallery-page-dessert" class="tm-gallery-page">
+                    @foreach (var item in dessert)
+                    {
+                        <!-- gallery hot coffee -->
+
+                        <article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item" style="margin-bottom:20px">
+                            <figure>
+
+                                <img src="@Url.Content(item.Path)" alt="Image" class="img-fluid tm-gallery-img" />
+                                <figcaption>
+                                    <h4 class="tm-gallery-title">@item.Title</h4>
+                                    <p style="font-size:10px;">Menu Id-@item.Id</p>
+                                    <p class="tm-gallery-description">@item.Des <span style="visibility:hidden"> dgjdgjdgsdjfdddddddddddddddddddddddddddddddddddgjdsgjgdkjkljgjklfhdfgsssdfg</span></p>
+                                    <p class="tm-gallery-price">@item.Price</p>
+                                    <form action="/Home/AddToCart" method="Post">
+                                        <input type="hidden" name="Id" id="Id" value="@item.Id" />
+                                        <label for="OrderNo">Quantity</label>
+                                        <input type="number" name="OrderNo" id="OrderNo" min="0" max="20" style="width:40px;height:20px" />
+                                        <div class="card">
+                                            <input type="submit" value="Add To Cart" style="border-color:white;width:100%;padding:5px" />
+                                        </div>
+                                    </form>
+                                </figcaption>
+                            </figure>
+                        </article>
+
+
+                    }
+                </div>
+
+
+            </div>
+
+        </main>
+
+
+    </div>
+    <script src="~/menu/js/jquery.min.js"></script>
+    <script src="~/menu/js/parallax.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Handle click on paging links
+            $('.tm-paging-link').click(function (e) {
+                e.preventDefault();
+
+                var page = $(this).text().toLowerCase();
+                $('.tm-gallery-page').addClass('hidden');
+                $('#tm-gallery-page-' + page).removeClass('hidden');
+                $('.tm-paging-link').removeClass('active');
+                $(this).addClass("active");
+            });
+        });
+    </script>
+</body>

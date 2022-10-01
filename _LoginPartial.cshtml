@@ -1,0 +1,105 @@
+﻿@using Microsoft.AspNet.Identity
+<head>
+    <style>
+        /* Dropdown Button */
+        .dropbtn {
+            background-color: #FFF;
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+        }
+
+        /* The container <div> - needed to position the dropdown content */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        /* Dropdown Content (Hidden by Default) */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f1f1f1;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+            /* Links inside the dropdown */
+            .dropdown-content a {
+                color: black;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+            }
+
+                /* Change color of dropdown links on hover */
+                .dropdown-content a:hover {
+                    background-color: #ddd;
+                }
+
+        /* Show the dropdown menu on hover */
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Change the background color of the dropdown button when the dropdown content is shown */
+        .dropdown:hover .dropbtn {
+            background-color: #e4c6e2;
+        }
+    </style>
+</head>
+@if (Request.IsAuthenticated)
+{
+    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+    {
+    @Html.AntiForgeryToken()
+
+<ul class="nav navbar-nav navbar-right">
+    @{
+        bool admin = false;
+        string x = User.Identity.GetUserName();
+        String[] parts = x.Split(new[] { '@' });
+        String username = parts[0];
+        String domain = parts[1];
+
+        if (x == "sheikhmahi1999@gmail.com" && User.Identity.IsAuthenticated)
+        {
+            admin = true;
+        }
+
+    }
+    @if (@admin)
+    {
+        <li>
+            @Html.ActionLink("Hello " + "Admin", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+        </li>
+
+    }
+    else
+    {
+      
+        <div class="dropdown">
+            <button class="dropbtn"> @Html.ActionLink("Hello " + @username + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })</button>
+            <div class="dropdown-content" style="padding: 5px; font-weight: 400; text-align: center; background-color: #CE1212;color:white">
+                @*<a href="#">Link 1</a>*@
+                @Html.ActionLink("Cart","ShowCart","Home")
+               
+                @Html.ActionLink("Table", "ShowBookTable", "Home")
+          
+            </div>
+        </div>
+    }
+
+    <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+</ul>
+    }
+}
+else
+{
+    <ul class="nav navbar-nav navbar-right">
+        <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+        <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+    </ul>
+}

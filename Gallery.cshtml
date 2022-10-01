@@ -1,0 +1,225 @@
+﻿@model IEnumerable<CoffeeShopProject.Models.GalleryTable>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<head>
+    <link rel="stylesheet"
+          href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+    <style>
+        .gallery-item {
+            overflow: hidden;
+            border-right: 3px solid #fff;
+            border-bottom: 3px solid #fff;
+        }
+
+            .gallery-item img {
+                transition: all ease-in-out 0.4s;
+            }
+
+            .gallery-item:hover img {
+                transform: scale(1.1);
+            }
+
+        .img-fluid {
+            max-width: 100%;
+            height: auto;
+        }
+
+            .img-fluid:hover .overlay {
+                width: 100%;
+                left: 0;
+            }
+
+        .gallery-lightbox {
+            box-sizing: border-box;
+        }
+
+        .text-overlay {
+            color: white;
+            font-size: 20px;
+            position: relative;
+            top: 50%;
+            left: 50%;
+            right: 50%;
+            bottom: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+
+<h2 style="text-align:center;margin-top:30px;margin-bottom:20px">Gallery</h2>
+
+<div class="row gy-0">
+
+    @foreach (var item in Model)
+    {
+        <div class="col-md-4">
+            <div class="gallery-item">
+                <a href="@Url.Content(item.Path)" class="gallery-lightbox">
+                    <img src="@Url.Content(item.Path)" alt="" class="img-fluid">
+                </a>
+            </div>
+        </div>
+    }
+
+    <!--<div class="col-md-4">
+        <div class="gallery-item">
+            <a href="~/gallery-coffee-shop/gallery-1.jpg" class="gallery-lightbox">
+                <img src="~/gallery-coffee-shop/gallery-1.jpg" alt="" class="img-fluid">
+
+            </a>-->
+    @* <div class="overlay">
+            <div class="text-overlay">Our interior has a homely feeling which gives a really peaceful vibe</div>
+        </div>*@
+
+    <!--</div>
+
+    </div>-->
+    @*<div class="col-md-4">
+            <div class="gallery-item">
+                <a href="~/gallery-coffee-shop/gallery-2.jpg" class="gallery-lightbox">
+                    <img src="~/gallery-coffee-shop/gallery-2.jpg" alt="" class="img-fluid">
+                </a>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="gallery-item">
+                <a href="~/gallery-coffee-shop/gallery-3.jpg" class="gallery-lightbox">
+                    <img src="~/gallery-coffee-shop/gallery-3.jpg" alt="" class="img-fluid">
+                </a>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="gallery-item">
+                <a href="~/gallery-coffee-shop/gallery-4.jpg" class="gallery-lightbox">
+                    <img src="~/gallery-coffee-shop/gallery-4.jpg" alt="" class="img-fluid">
+                </a>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="gallery-item">
+                <a href="~/gallery-coffee-shop/gallery-5.jpg" class="gallery-lightbox">
+                    <img src="~/gallery-coffee-shop/gallery-5.jpg" alt="" class="img-fluid">
+                </a>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="gallery-item">
+                <a href="~/gallery-coffee-shop/gallery-6.jpg" class="gallery-lightbox">
+                    <img src="~/gallery-coffee-shop/gallery-6.jpg" alt="" class="img-fluid">
+                </a>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="gallery-item">
+                <a href="~/gallery-coffee-shop/gallery-7.jpg" class="gallery-lightbox">
+                    <img src="~/gallery-coffee-shop/gallery-7.jpg" alt="" class="img-fluid">
+                </a>
+
+            </div>
+        </div>
+
+        <div class=" col-md-4">
+            <div class="gallery-item">
+                <a href="~/gallery-coffee-shop/gallery-8.jpg" class="gallery-lightbox">
+                    <img src="~/gallery-coffee-shop/gallery-8.jpg" alt="" class="img-fluid">
+                </a>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="gallery-item">
+                <a href="~/gallery-coffee-shop/gallery-9.jpg" class="gallery-lightbox">
+                    <img src="~/gallery-coffee-shop/gallery-9.jpg" alt="" class="img-fluid">
+                </a>
+            </div>
+
+        </div>*@
+
+
+</div>
+
+
+
+<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js">
+
+</script>
+<script>
+        const swiper = new Swiper('.swiper', {
+            // Optional parameters
+            @*direction: 'vertical',
+            loop: true,*@
+           @* effect: "cube",
+            grabCursor: true,
+            cubeEffect: {
+                shadow: true,
+                slideShadows: true,
+                shadowOffset: 20,
+                shadowScale: 0.94,
+        },*@
+            // If we need pagination
+            pagination: {
+                el: '.swiper-pagination',
+            },
+
+            // Navigation arrows
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+
+            // And if we need scrollbar
+            scrollbar: {
+                el: '.swiper-scrollbar',
+            },
+        });
+</script>
+
+
+
+@*<div class="container" style="position: relative; width: 50%; float:left">
+        <img src="~/gallery-coffee-shop/gallery-11.jpg" alt="Interior of shop" class="gallery-img" />
+        <div class="overlay">
+            <div class="text-overlay">Our interior has a homely feeling which gives a really peaceful vibe</div>
+        </div>
+
+
+    </div>
+    <br />
+    <div class="container" style="position: relative; width: 50%; display:grid;">
+        <img src="~/gallery-coffee-shop/gallery-10.jpg" alt="Interior of shop" class="gallery-img" />
+        <div class="overlay">
+            <div class="text-overlay">Our interior has a homely feeling which gives a really peaceful vibe</div>
+        </div>
+
+
+
+    </div>
+    <br />
+    <div class="container" style="position: relative; width: 50%; float:left">
+        <img src="~/gallery-coffee-shop/gallery-11.jpg" alt="Interior of shop" class="gallery-img" />
+        <div class="overlay">
+            <div class="text-overlay">Our interior has a homely feeling which gives a really peaceful vibe</div>
+        </div>
+
+
+    </div>
+    <br />
+    <div class="container" style="position: relative; width: 50%; float:left">
+
+        <img src="~/gallery-coffee-shop/gallery-11.jpg" alt="Interior of shop" class="gallery-img" />
+
+        <div class="overlay">
+            <div class="text-overlay">Our interior has a homely feeling which gives a really peaceful vibe</div>
+        </div>
+
+
+    </div>
+    <br />
+*@

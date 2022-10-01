@@ -1,0 +1,36 @@
+﻿@model CoffeeShopProject.Models.TblSlider
+
+@{
+    ViewBag.Title = "GetASlider";
+}
+
+<div class="container" style="margin-top:50px">
+    <h2>GetASlider</h2>
+
+    <div>
+
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Title)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Title)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Path)
+            </dt>
+
+            <dd>
+                <img src="@Url.Content(Model.Path)" width="800" height="400" />
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Back to List", "GetSliderList")
+    </p>
+
+</div>

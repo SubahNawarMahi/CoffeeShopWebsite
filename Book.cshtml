@@ -1,0 +1,83 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!--<head>
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />-->
+<!-- font awesome cdn link  -->
+<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">-->
+<!-- bootstrap4 -->
+<!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+          integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link href="~/Content/style1.css" rel="stylesheet" />
+</head>-->
+<h2>@ViewBag.Title</h2>
+<section class="banner" style="margin-top:50px" >
+    <h2 style="text-align:center;font-family:'Times New Roman', Times, serif;font-style:italic;color:black;font-weight:400;font-size:40px">BOOK  <span style="text-align:center;font-family:'Monotype Corsiva';font-style:oblique;color:red;font-weight:400;font-size:40px">YOUR STAY</span>  WITH US</h2>
+    <div class="card-container "style="background-color: #F7F7F7;display:flex; flex: 2 1; padding: 2em ">
+        <div class="card-img"style="width:500px">
+            <!-- image here -->
+            <img src="~/projectImages/reservation.jpg"  style="width:90%; height:100%"/>
+        </div>
+
+        <div class="card-content" style="width:400px">
+            <div style="height:300px">
+                <h2 style="font-family:'Times New Roman','Times New Roman', Times, serif;font-weight:400;text-align:justify">Reservation</h2>
+
+                @using (Html.BeginForm())
+                {
+                    <div class="form-row">
+                        <input type="text" name="FullName" placeholder="Full Name" style="width: 100%; padding: 12px; /* Some padding */ border: 1px solid #ccc; /* Gray border */ border-radius: 4px; /* Rounded borders */ box-sizing: border-box; /* Make sure that padding and width stays in place */ margin-top: 6px; /* Add a top margin */ margin-bottom: 16px; /* Bottom margin */ resize: vertical">
+
+                    </div>
+                    <div class="form-row">
+                        <input type="text" name="PhoneNo" placeholder="Phone Number" style="width: 100%; padding: 12px; /* Some padding */ border: 1px solid #ccc; /* Gray border */ border-radius: 4px; /* Rounded borders */ box-sizing: border-box; /* Make sure that padding and width stays in place */ margin-top: 6px; /* Add a top margin */ margin-bottom: 16px; /* Bottom margin */ resize: vertical">
+                    </div>
+                    <div class="form-row">
+                        <input type="email" name="Email" placeholder="Your Email" style="width: 100%; padding: 12px; /* Some padding */ border: 1px solid #ccc; /* Gray border */ border-radius: 4px; /* Rounded borders */ box-sizing: border-box; /* Make sure that padding and width stays in place */ margin-top: 6px; /* Add a top margin */ margin-bottom: 16px; /* Bottom margin */ resize: vertical">
+                    </div>
+
+                    <div class="form-row">
+                        <select name="Day" style="width: 100%; padding: 12px; /* Some padding */ border: 1px solid #ccc; /* Gray border */ border-radius: 4px; /* Rounded borders */ box-sizing: border-box; /* Make sure that padding and width stays in place */ margin-top: 6px; /* Add a top margin */ margin-bottom: 16px; /* Bottom margin */ resize: vertical">
+                            <option value="day-select">Select Day</option>
+                            <option value="sunday">Sunday</option>
+                            <option value="monday">Monday</option>
+                            <option value="tuesday">Tuesday</option>
+                            <option value="wednesday">Wednesday</option>
+                            <option value="thursday">Thursday</option>
+                            <option value="friday">Friday</option>
+                            <option value="saturday">Saturday</option>
+                        </select>
+
+                    </div>
+                    <div class="form-row">
+
+                        <select name="Hours" style="width: 100%; padding: 12px; /* Some padding */ border: 1px solid #ccc; /* Gray border */ border-radius: 4px; /* Rounded borders */ box-sizing: border-box; /* Make sure that padding and width stays in place */ margin-top: 6px; /* Add a top margin */ margin-bottom: 16px; /* Bottom margin */ resize: vertical">
+                            <option value="hour-select">Select Hour</option>
+                            <option value="10">10: 00</option>
+                            <option value="10">12: 00</option>
+                            <option value="10">14: 00</option>
+                            <option value="10">16: 00</option>
+                            <option value="10">18: 00</option>
+                            <option value="10">20: 00</option>
+                            <option value="10">22: 00</option>
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-row">
+                        <input type="number" name="PersonNo" placeholder="How Many Persons?" min="1" max="7" style="width: 100%; padding: 12px; /* Some padding */ border: 1px solid #ccc; /* Gray border */ border-radius: 4px; /* Rounded borders */ box-sizing: border-box; /* Make sure that padding and width stays in place */ margin-top: 6px; /* Add a top margin */ margin-bottom: 16px; /* Bottom margin */ resize: vertical">
+
+                    </div>
+                    <button type="submit" style=" font-size:20px;font-weight:400;font-family:'Times New Roman', Times, serif;background-color:red;border:0;color:#fff;border-radius:50px;padding:14px 60px;transition:0.4s;">Book Table</button>
+                    @ViewBag.BookTable
+                }
+
+                
+            </div>
+            
+        </div>
+    </div>
+</section>
